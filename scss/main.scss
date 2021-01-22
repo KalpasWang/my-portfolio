@@ -1,0 +1,348 @@
+@import 'config';
+@import 'menu';
+@import 'button';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $primary-color;
+  color: $text-color;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  margin: 0;
+
+  &.lg-heading {
+    font-size: 5rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 0.1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+  cursor: pointer;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.text-secondary {
+  color: set-secondary-color($primary-color);
+}
+
+.text-secondary-light {
+  color: set-secondary-color($light-primary-color);
+}
+
+.home {
+  padding: 4rem;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  //z-index: -2;
+  background: $primary-color;
+  @include bg;
+
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($primary-color, $bg-opacity);
+    padding: 4rem;
+  }
+
+  .icons {
+    margin-top: 1rem;
+    z-index: 0;
+
+    a {
+      padding: 0 0.4rem;
+    }
+  }
+
+  h1 {
+    margin-top: 20vh;
+  }
+}
+
+section#about {
+  padding: 4rem;
+  overflow: hidden;
+  min-height: 100vh;
+  background: $light-primary-color;
+  color: set-text-color($light-primary-color);
+
+  .about-info {
+    display: grid;
+    grid-template-areas: 'bioimage bio bio';
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 20px;
+
+    .bio-image {
+      grid-area: bioimage;
+      border-radius: 50%;
+      border: 3px solid $light-secondary-color;
+      margin: auto;
+    }
+
+    .bio {
+      grid-area: bio;
+      font-size: 1.5rem;
+    }
+  }
+
+  .scroll-wrapper {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 'exp1 exp2 exp3 exp4';
+    grid-template-columns: repeat(4, 1fr);
+
+    .card {
+      background: darken($light-primary-color, 5);
+      text-align: center;
+      height: 15rem;
+
+      .card-info {
+        height: 85%;
+        width: 100%;
+        padding: 0.5rem;
+
+        img {
+          width: 3rem;
+        }
+      }
+
+      .date {
+        background: $light-secondary-color;
+        color: set-text-color($light-secondary-color);
+        height: 15%;
+        width: 100%;
+        display: inline-block;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    exp1 {
+      grid-area: exp1;
+    }
+
+    exp2 {
+      grid-area: exp2;
+    }
+
+    exp3 {
+      grid-area: exp3;
+    }
+
+    exp4 {
+      grid-area: exp3;
+    }
+  }
+}
+
+section#skills {
+  padding: 4rem;
+  overflow: hidden;
+
+  .progress-bar {
+    width: 70%;
+    margin: 0 auto;
+    margin: 30px auto;
+
+    .bar {
+      width: 100%;
+      height: $bar-height;
+      background: darken($primary-color, 5);
+      margin-bottom: 20px;
+      position: relative;
+      border-radius: 5px;
+      box-shadow: 0 1px 2px darken($primary-color, 10);
+    }
+
+    .title {
+      position: absolute;
+      float: left;
+      width: 100px;
+      height: $bar-height;
+      line-height: $bar-height;
+      padding-left: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background: darken($secondary-color, 40);
+      border-right: 3px solid $secondary-color;
+      z-index: 10;
+    }
+
+    .bar-value {
+      position: relative;
+      float: right;
+      right: -50px;
+      line-height: $bar-height;
+      padding-right: 5px;
+      z-index: 10;
+    }
+
+    .progress {
+      position: absolute;
+      float: left;
+      height: $bar-height;
+      width: 100px;
+      border-radius: 5px;
+      background: darken($secondary-color, 10);
+
+      &.html {
+        max-width: 90%;
+      }
+
+      &.css {
+        max-width: 70%;
+      }
+
+      &.js {
+        max-width: 60%;
+      }
+    }
+  }
+
+  .specialty {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    .ability {
+      text-align: center;
+
+      .icons {
+        padding: 2rem 0;
+      }
+    }
+  }
+}
+
+section#work {
+  padding: 4rem;
+  overflow: hidden;
+  min-height: 100vh;
+  background: $light-primary-color;
+  color: set-text-color($light-primary-color);
+
+  .projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-areas: 'proj1 proj2 proj3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .item {
+      .project-box {
+        width: 100%;
+        height: 15rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 0% 50%;
+          @include easeOut;
+        }
+
+        &:hover img {
+          transform: scale(1.2);
+        }
+
+        .details {
+          position: absolute;
+          top: 10px;
+          bottom: 10px;
+          left: 10px;
+          right: 10px;
+          background: rgba($primary-color, 0.8);
+          @include easeOut;
+          transform: scaleY(0);
+          color: set-text-color($primary-color);
+
+          .content {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            padding: 10px;
+          }
+        }
+
+        &:hover .details {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
+
+section#contact {
+  padding: 4rem;
+  overflow: hidden;
+  min-height: 100vh;
+
+  form {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+
+    #name,
+    #msg {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    #msg {
+      font-size: 1.2rem;
+    }
+
+    #name:focus,
+    #msg:focus {
+      border: 2px solid $secondary-color;
+    }
+
+    .submit {
+      margin: 0 auto;
+    }
+  }
+}
+
+@import 'mobile';

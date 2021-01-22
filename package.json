@@ -1,0 +1,15 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "my personal portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass scss/ -o dist/css/ --output-style expanded"
+  },
+  "author": "Kalpas Wang",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
