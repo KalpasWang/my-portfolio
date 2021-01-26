@@ -4,9 +4,9 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
-  padding: 7px 10px;
-  background: darken($primary-color, 5);
-  border-radius: 20%;
+  // padding: 7px 10px;
+  // background: darken($primary-color, 5);
+  // border-radius: 20%;
   @include easeOut;
 
   .btn-line {
@@ -43,60 +43,98 @@
 .menu {
   position: fixed;
   top: 0;
-  width: 100%;
-  opacity: 0.8;
-  visibility: hidden;
+  right: 0;
+  width: 280px;
+  opacity: 0;
   display: flex;
   margin: 0;
   padding: 0;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   overflow: hidden;
   background: darken($color: $primary-color, $amount: 5);
+  transform: translate3d(0, -100%, 0);
+  @include easeOut;
 
   &.show {
-    visibility: visible;
+    // 從上方滑入
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
   }
 
-  //&-branding,
+  &-branding,
   &-nav {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     overflow: hidden;
   }
 
   &-nav {
-    float: left;
+    margin: 0;
+    padding: 0;
+    justify-content: start;
     list-style: none;
-    transform: translate(-500%, 0);
+    height: 70vh;
+  }
+
+  &-branding {
+    height: 30vh;
+    margin-top: 30px;
+    transform: translate3d(100%, 0, 0);
     @include easeOut;
+    transition-delay: 0.3s;
 
     &.show {
-      transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
-  // &-branding {
-  //   transform: translate(-500%, 0);
-  //   @include easeOut;
+  &-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background: url('../img/me.jpg') white;
+    background-size: cover;
+    border-radius: 50%;
+    border: solid 3px $secondary-color;
+  }
 
-  //   &.show {
-  //     transform: translate(0, 0);
-  //   }
+  &-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
 
-  //   .me {
-  //     width: 40px;
-  //     height: 40px;
-  //     background: $my-photo no-repeat center;
-  //     background-size: 40px 40px;
-  //     border-radius: 50%;
-  //     border: 3px solid $secondary-color;
-  //   }
-  // }
+    &.show {
+      // 從右方滑入
+      transform: translate3d(0, 0, 0);
+    }
 
-  .menu-item {
-    height: 100%;
-    text-align: center;
-    float: left;
-    padding: 10px;
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  &-nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: set-text-color($primary-color);
+    text-decoration: none;
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// 每一個 menu-item delay 0.05 秒出現
+@for $x from 1 through 5 {
+  .menu-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.05s;
   }
 }

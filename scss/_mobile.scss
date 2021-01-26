@@ -17,6 +17,7 @@
 
   .home h1 {
     margin-top: 20vh;
+    font-size: 3rem;
   }
 
   .secondary-heading {
@@ -28,15 +29,36 @@
     line-height: 1;
   }
 
+  .menu-nav {
+    font-size: 24px;
+  }
+
   .about-info {
     grid-template-areas:
       'bioimage'
-      'bio';
+      'bio'
+      'job1'
+      'job2'
+      'job3';
+
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @include mediaSm {
   .home h1 {
-    margin-top: 5vh;
+    font-size: 2.4rem;
+  }
+
+  .secondary-heading {
+    font-size: 2rem;
+  }
+
+  h2.sm-heading {
+    font-size: 1.2rem;
   }
 }

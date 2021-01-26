@@ -1,7 +1,7 @@
 $primary-color: #444;
-$light-primary-color: #ddd;
+$light-primary-color: #fff;
 $secondary-color: #eece1a;
-$light-secondary-color: #101b80;
+$light-secondary-color: #1a87ee;
 $text-color: #f1f1f1;
 $text-dark-color: #111;
 $show-home-image: true;
@@ -11,7 +11,7 @@ $my-photo: url('../img/me.jpg');
 $bar-height: 40px;
 
 @mixin easeOut {
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 @mixin bg {
@@ -68,7 +68,7 @@ $bar-height: 40px;
 }
 
 @mixin mediaSm {
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 431px) {
     @content;
   }
 }
