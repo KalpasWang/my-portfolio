@@ -52,9 +52,9 @@ header {
   color: set-secondary-color($primary-color);
 }
 
-.text-secondary-light {
-  color: set-secondary-color($light-primary-color);
-}
+// .text-secondary-light {
+//   color: set-secondary-color($light-primary-color);
+// }
 
 .home {
   padding: 4rem;
@@ -93,28 +93,163 @@ section#about {
   padding: 4rem;
   overflow: hidden;
   min-height: 100vh;
-  background: $light-primary-color;
-  color: set-text-color($light-primary-color);
+  background: $primary-color;
+  color: set-text-color($primary-color);
 
   .about-info {
-    display: grid;
-    grid-template-areas: 'bioimage bio bio';
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 
     .bio-image {
-      grid-area: bioimage;
-      border-radius: 50%;
-      border: 3px solid $light-secondary-color;
-      margin: auto;
+      margin-right: 2rem;
     }
 
     .bio {
-      grid-area: bio;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
+}
+
+section.experience {
+  padding: 4rem;
+  overflow: hidden;
+  min-height: 100vh;
+
+  .timeline {
+    position: relative;
+    margin: 0 auto 20px;
+    width: 80%;
+
+    &::before {
+      content: '';
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $text-color;
+    }
+
+    & > ul {
+      display: inline-block;
+      position: relative;
+      padding: 85px 0 48px;
+      width: 100%;
+    }
+
+    & > ul::before {
+      content: '';
+      background: url(../img/dot-start.svg);
+      background-size: contain;
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      top: 0;
+      left: 50%;
+      z-index: 10;
+      transform: translateX(-50%);
+    }
+
+    & > ul::after {
+      content: '';
+      background: #d8d8d8;
+      border-radius: 2px;
+      width: 46px;
+      height: 4px;
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    & > ul > li {
+      position: relative;
+      width: 46%;
+    }
+
+    & > ul > li:nth-child(odd) {
+      float: right;
+      text-align: left;
+      clear: both;
+    }
+
+    & > ul > li:nth-child(even) {
+      float: left;
+      text-align: right;
+      clear: both;
+    }
+
+    & li:nth-child(odd) .time-marker {
+      position: absolute;
+      top: 0;
+      left: -48px;
+    }
+
+    & li:nth-child(even) .time-marker {
+      position: absolute;
+      top: 0;
+      right: -49px;
+    }
+
+    & li polygon {
+      @include easeOut;
+    }
+
+    & li:hover polygon {
+      fill: #eece1a;
+    }
+
+    & li:hover .content {
+      background: $secondary-color;
+      color: $text-dark-color;
+    }
+
+    & li:hover .time {
+      color: $secondary-color;
+    }
+
+    & .content {
+      position: relative;
+      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
+      background: darken($primary-color, 5);
+      border-radius: 0.5rem;
+      color: $text-color;
+      @include easeOut;
+    }
+
+    & .time {
+      position: absolute;
+      top: -1.5rem;
+      left: 0.5rem;
+      font-size: 0.8rem;
+      color: $text-color;
+      font-weight: 300;
+    }
+
+    & li:nth-child(even) .time {
+      left: auto;
+      right: 0.5rem;
+    }
+
+    & .job {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    & .description {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+section#skills {
+  padding: 4rem;
+  overflow: hidden;
 
   .scroll-wrapper {
     display: grid;
@@ -123,7 +258,7 @@ section#about {
     grid-template-columns: repeat(4, 1fr);
 
     .card {
-      background: darken($light-primary-color, 5);
+      background: darken($primary-color, 5);
       text-align: center;
       height: 15rem;
 
@@ -138,8 +273,8 @@ section#about {
       }
 
       .date {
-        background: $light-secondary-color;
-        color: set-text-color($light-secondary-color);
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
         height: 15%;
         width: 100%;
         display: inline-block;
@@ -167,71 +302,6 @@ section#about {
       grid-area: exp3;
     }
   }
-}
-
-section#skills {
-  padding: 4rem;
-  overflow: hidden;
-
-  .progress-bar {
-    width: 70%;
-    margin: 0 auto;
-    margin: 30px auto;
-
-    .bar {
-      width: 100%;
-      height: $bar-height;
-      background: darken($primary-color, 5);
-      margin-bottom: 20px;
-      position: relative;
-      border-radius: 5px;
-      box-shadow: 0 1px 2px darken($primary-color, 10);
-    }
-
-    .title {
-      position: absolute;
-      float: left;
-      width: 100px;
-      height: $bar-height;
-      line-height: $bar-height;
-      padding-left: 5px;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      background: darken($secondary-color, 40);
-      border-right: 3px solid $secondary-color;
-      z-index: 10;
-    }
-
-    .bar-value {
-      position: relative;
-      float: right;
-      right: -50px;
-      line-height: $bar-height;
-      padding-right: 5px;
-      z-index: 10;
-    }
-
-    .progress {
-      position: absolute;
-      float: left;
-      height: $bar-height;
-      width: 100px;
-      border-radius: 5px;
-      background: darken($secondary-color, 10);
-
-      &.html {
-        max-width: 90%;
-      }
-
-      &.css {
-        max-width: 70%;
-      }
-
-      &.js {
-        max-width: 60%;
-      }
-    }
-  }
 
   .specialty {
     display: grid;
@@ -252,8 +322,8 @@ section#work {
   padding: 4rem;
   overflow: hidden;
   min-height: 100vh;
-  background: $light-primary-color;
-  color: set-text-color($light-primary-color);
+  background: $primary-color;
+  color: set-text-color($primary-color);
 
   .projects {
     display: grid;

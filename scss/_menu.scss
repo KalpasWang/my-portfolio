@@ -3,6 +3,7 @@
   z-index: 3;
   right: 35px;
   top: 35px;
+  z-index: 99;
   cursor: pointer;
   // padding: 7px 10px;
   // background: darken($primary-color, 5);
@@ -51,6 +52,7 @@
   padding: 0;
   flex-flow: column nowrap;
   overflow: hidden;
+  z-index: 50;
   background: darken($color: $primary-color, $amount: 5);
   transform: translate3d(0, -100%, 0);
   @include easeOut;
@@ -95,7 +97,7 @@
     width: 150px;
     height: 150px;
     margin: 0 auto;
-    background: url('../img/me.jpg') white;
+    background: $my-photo;
     background-size: cover;
     border-radius: 50%;
     border: solid 3px $secondary-color;
