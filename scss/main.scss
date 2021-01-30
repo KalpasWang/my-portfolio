@@ -27,7 +27,8 @@ h3 {
   }
 
   &.sm-heading {
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     padding: 0.2rem 0.1rem;
   }
 }
@@ -166,7 +167,6 @@ section.experience {
     }
 
     & > ul > li {
-      position: relative;
       width: 46%;
     }
 
@@ -182,16 +182,19 @@ section.experience {
       clear: both;
     }
 
-    & li:nth-child(odd) .time-marker {
+    & li > .time-marker {
       position: absolute;
-      top: 0;
-      left: -48px;
+      top: 26.9%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    & li:nth-child(even) .time-marker {
-      position: absolute;
-      top: 0;
-      right: -49px;
+    & li:nth-child(2) > .time-marker {
+      top: 51%;
+    }
+
+    & li:nth-child(3) > .time-marker {
+      top: 75.1%;
     }
 
     & li polygon {
@@ -250,70 +253,43 @@ section.experience {
 section#skills {
   padding: 4rem;
   overflow: hidden;
+  min-height: 100vh;
 
-  .scroll-wrapper {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-areas: 'exp1 exp2 exp3 exp4';
-    grid-template-columns: repeat(4, 1fr);
+  .skills-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 1.5rem auto 1rem;
 
-    .card {
-      background: darken($primary-color, 5);
+    & > li {
+      width: 30%;
+      min-height: 14rem;
+      padding: 0.5rem 0.8rem;
+      border-bottom: 3px solid $secondary-color;
+      background: lighten($primary-color, 5);
       text-align: center;
-      height: 15rem;
-
-      .card-info {
-        height: 85%;
-        width: 100%;
-        padding: 0.5rem;
-
-        img {
-          width: 3rem;
-        }
-      }
-
-      .date {
-        background: $secondary-color;
-        color: set-text-color($secondary-color);
-        height: 15%;
-        width: 100%;
-        display: inline-block;
-
-        span {
-          display: inline-block;
-          vertical-align: middle;
-        }
-      }
+      @include easeOut;
     }
 
-    exp1 {
-      grid-area: exp1;
+    & > li:hover {
+      background: $secondary-color;
+      color: $text-dark-color;
     }
 
-    exp2 {
-      grid-area: exp2;
+    & .fas {
+      color: $secondary-color;
+      @include easeOut;
     }
 
-    exp3 {
-      grid-area: exp3;
+    & > li:hover > .fas {
+      color: $text-dark-color;
     }
 
-    exp4 {
-      grid-area: exp3;
-    }
-  }
-
-  .specialty {
-    display: grid;
-    grid-gap: 0.7rem;
-    grid-template-columns: repeat(4, 1fr);
-
-    .ability {
-      text-align: center;
-
-      .icons {
-        padding: 2rem 0;
-      }
+    & > li > .skills-sublist {
+      list-style: disc;
+      list-style-position: inside;
+      font-size: 0.8rem;
     }
   }
 }

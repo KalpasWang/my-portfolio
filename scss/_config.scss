@@ -41,14 +41,6 @@ $bar-height: 40px;
   }
 }
 
-@function set-secondary-color($bg-color) {
-  @if (lightness($bg-color) > 40) {
-    @return $light-secondary-color;
-  } @else {
-    @return $secondary-color;
-  }
-}
-
 @mixin mediaXl {
   @media screen {
     @content;

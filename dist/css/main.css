@@ -375,7 +375,8 @@ h3.lg-heading {
 h1.sm-heading,
 h2.sm-heading,
 h3.sm-heading {
-  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   padding: 0.2rem 0.1rem;
 }
 
@@ -396,7 +397,7 @@ header {
 }
 
 .text-secondary {
-  color: #eece1a;
+  color: set-secondary-color(#444);
 }
 
 .home {
@@ -531,7 +532,6 @@ section.experience .timeline > ul::after {
 }
 
 section.experience .timeline > ul > li {
-  position: relative;
   width: 46%;
 }
 
@@ -547,16 +547,20 @@ section.experience .timeline > ul > li:nth-child(even) {
   clear: both;
 }
 
-section.experience .timeline li:nth-child(odd) .time-marker {
+section.experience .timeline li > .time-marker {
   position: absolute;
-  top: 0;
-  left: -48px;
+  top: 26.9%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
-section.experience .timeline li:nth-child(even) .time-marker {
-  position: absolute;
-  top: 0;
-  right: -49px;
+section.experience .timeline li:nth-child(2) > .time-marker {
+  top: 51%;
+}
+
+section.experience .timeline li:nth-child(3) > .time-marker {
+  top: 75.1%;
 }
 
 section.experience .timeline li polygon {
@@ -615,84 +619,54 @@ section.experience .timeline .description {
 section#skills {
   padding: 4rem;
   overflow: hidden;
+  min-height: 100vh;
 }
 
-section#skills .scroll-wrapper {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 30px;
-      grid-template-areas: 'exp1 exp2 exp3 exp4';
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+section#skills .skills-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1.5rem auto 1rem;
 }
 
-section#skills .scroll-wrapper .card {
-  background: #373737;
+section#skills .skills-list > li {
+  width: 30%;
+  min-height: 14rem;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 3px solid #eece1a;
+  background: #515151;
   text-align: center;
-  height: 15rem;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
-section#skills .scroll-wrapper .card .card-info {
-  height: 85%;
-  width: 100%;
-  padding: 0.5rem;
-}
-
-section#skills .scroll-wrapper .card .card-info img {
-  width: 3rem;
-}
-
-section#skills .scroll-wrapper .card .date {
+section#skills .skills-list > li:hover {
   background: #eece1a;
   color: #111;
-  height: 15%;
-  width: 100%;
-  display: inline-block;
 }
 
-section#skills .scroll-wrapper .card .date span {
-  display: inline-block;
-  vertical-align: middle;
+section#skills .skills-list .fas {
+  color: #eece1a;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
-section#skills .scroll-wrapper exp1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: exp1;
+section#skills .skills-list > li:hover > .fas {
+  color: #111;
 }
 
-section#skills .scroll-wrapper exp2 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: exp2;
-}
-
-section#skills .scroll-wrapper exp3 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: exp3;
-}
-
-section#skills .scroll-wrapper exp4 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: exp3;
-}
-
-section#skills .specialty {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 0.7rem;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-}
-
-section#skills .specialty .ability {
-  text-align: center;
-}
-
-section#skills .specialty .ability .icons {
-  padding: 2rem 0;
+section#skills .skills-list > li > .skills-sublist {
+  list-style: disc;
+  list-style-position: inside;
+  font-size: 0.8rem;
 }
 
 section#work {
