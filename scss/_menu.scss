@@ -5,9 +5,6 @@
   top: 35px;
   z-index: 99;
   cursor: pointer;
-  // padding: 7px 10px;
-  // background: darken($primary-color, 5);
-  // border-radius: 20%;
   @include easeOut;
 
   .btn-line {
@@ -46,6 +43,7 @@
   top: 0;
   right: 0;
   width: 280px;
+  height: 100vh;
   opacity: 0;
   display: flex;
   margin: 0;
@@ -63,45 +61,40 @@
     opacity: 0.8;
   }
 
-  &-branding,
   &-nav {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
     overflow: hidden;
-  }
-
-  &-nav {
     margin: 0;
     padding: 0;
-    justify-content: start;
     list-style: none;
-    height: 70vh;
   }
 
-  &-branding {
-    height: 30vh;
-    margin-top: 30px;
-    transform: translate3d(100%, 0, 0);
-    @include easeOut;
-    transition-delay: 0.3s;
+  // &-branding {
+  //   height: 30vh;
+  //   margin-top: 30px;
+  //   transform: translate3d(100%, 0, 0);
+  //   @include easeOut;
+  //   transition-delay: 0.3s;
 
-    &.show {
-      transform: translate3d(0, 0, 0);
-    }
-  }
+  //   &.show {
+  //     transform: translate3d(0, 0, 0);
+  //   }
+  // }
 
-  &-avatar {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    background: $my-photo;
-    background-size: cover;
-    border-radius: 50%;
-    border: solid 3px $secondary-color;
-  }
+  // &-avatar {
+  //   width: 150px;
+  //   height: 150px;
+  //   margin: 0 auto;
+  //   background: $my-photo;
+  //   background-size: cover;
+  //   border-radius: 50%;
+  //   border: solid 3px $secondary-color;
+  // }
 
   &-item {
     transform: translate3d(600px, 0, 0);
@@ -134,9 +127,9 @@
   }
 }
 
-// 每一個 menu-item delay 0.05 秒出現
+// 每一個 menu-item delay 0.1 秒出現
 @for $x from 1 through 5 {
   .menu-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.05s;
+    transition-delay: $x * 0.1s;
   }
 }
