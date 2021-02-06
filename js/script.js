@@ -2,7 +2,6 @@ var menuBtn = document.querySelector('.menu-btn');
 var menu = document.querySelector('.menu');
 var menuNav = document.querySelector('.menu-nav');
 var menuItems = document.querySelectorAll('.menu-item');
-
 var showMenu = false;
 
 menuBtn.addEventListener('click', function () {
