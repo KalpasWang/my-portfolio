@@ -49,17 +49,29 @@ header {
   z-index: 2;
 }
 
+main,
+.bg-overlay,
+section,
+footer {
+  padding: 1.5rem;
+}
+
 .text-secondary {
   color: $secondary-color;
 }
 
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+// 首頁
 main.home {
-  padding: 4rem;
   overflow: hidden;
   height: 100vh;
   position: relative;
-  background: $primary-color;
-  @include bg;
+  background: $home-image-url $primary-color;
+  background-size: cover;
 
   .bg-overlay {
     position: absolute;
@@ -68,7 +80,6 @@ main.home {
     width: 100%;
     height: 100%;
     background: rgba($primary-color, $bg-opacity);
-    padding: 4rem;
   }
 
   .icons {
@@ -81,12 +92,12 @@ main.home {
   }
 
   h1 {
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
 }
 
+// 關於我
 section.about {
-  padding: 4rem;
   overflow: hidden;
   min-height: 100vh;
   background: $primary-color;
@@ -94,28 +105,34 @@ section.about {
 
   .about-info {
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: center;
-    margin-top: 1rem;
+    padding: 0 1rem;
+    margin-top: 5rem;
 
     .bio-image {
-      margin-right: 2rem;
+      max-width: 100%;
+      height: auto;
+      border: 5px solid $secondary-color;
+      border-radius: 50%;
     }
 
     .bio {
-      font-size: 1.2rem;
+      max-width: 35rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
   }
 }
 
 section.experience {
-  padding: 4rem;
   overflow: hidden;
   min-height: 100vh;
 
   .timeline {
     position: relative;
-    margin: 0 auto 20px;
+    margin: 4rem auto 0;
     width: 80%;
 
     &::before {
@@ -163,6 +180,7 @@ section.experience {
 
     & > ul > li {
       width: 46%;
+      margin: 1.5rem 0;
     }
 
     & > ul > li:nth-child(odd) {
@@ -179,7 +197,7 @@ section.experience {
 
     & li > .time-marker {
       position: absolute;
-      top: 26.9%;
+      top: 24.9%;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -189,7 +207,7 @@ section.experience {
     }
 
     & li:nth-child(3) > .time-marker {
-      top: 75.1%;
+      top: 77.1%;
     }
 
     & li polygon {
@@ -246,14 +264,12 @@ section.experience {
 }
 
 section.skills {
-  padding: 4rem;
   overflow: hidden;
   min-height: 100vh;
 
   .skills-list {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
     flex-wrap: wrap;
     margin: 1.5rem auto 1rem;
 
@@ -262,6 +278,7 @@ section.skills {
       max-width: 20rem;
       min-width: 16rem;
       min-height: 14rem;
+      margin: 1rem;
       padding: 0.5rem 0.8rem;
       border-bottom: 3px solid $secondary-color;
       background: lighten($primary-color, 5);
@@ -297,7 +314,6 @@ section.skills {
 }
 
 section.works {
-  padding: 4rem;
   overflow: hidden;
   min-height: 100vh;
   background: $primary-color;
@@ -311,9 +327,8 @@ section.works {
     flex-flow: row wrap;
 
     .project {
-      width: 30%;
-      max-width: 300px;
-      min-width: 280px;
+      max-width: 20rem;
+      min-width: 16rem;
       margin: 1rem;
 
       &-box {
@@ -359,6 +374,11 @@ section.works {
         text-align: center;
       }
 
+      &-link:hover {
+        background: $secondary-color;
+        color: $primary-color;
+      }
+
       &-footer {
         background: lighten($primary-color, 10);
         padding: 1rem;
@@ -397,13 +417,13 @@ section.works {
 
   .contact {
     &-list {
-      width: 450px;
+      max-width: 450px;
       margin: 0 auto;
       margin-bottom: 1rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      flex-wrap: wrap;
+      flex-flow: row wrap;
     }
 
     &-item {

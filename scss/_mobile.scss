@@ -15,8 +15,7 @@
     text-align: center;
   }
 
-  .home h1 {
-    margin-top: 20vh;
+  h1.lg-heading {
     font-size: 3rem;
   }
 
@@ -25,32 +24,20 @@
     margin-top: 1rem;
   }
 
-  .lg-heading {
-    line-height: 1;
-  }
-
   .menu-nav {
     font-size: 24px;
   }
 
-  .about-info {
-    grid-template-areas:
-      'bioimage'
-      'bio'
-      'job1'
-      'job2'
-      'job3';
-
-    grid-template-columns: 1fr;
-  }
-
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
+  section.experience .timeline {
+    width: 100%;
+    padding: 0 1rem;
   }
 }
 
 @include mediaSm {
-  .home h1 {
+  h1.lg-heading,
+  h2.lg-heading {
+    margin-top: 1.5rem;
     font-size: 2.4rem;
   }
 
@@ -60,5 +47,38 @@
 
   h2.sm-heading {
     font-size: 1.2rem;
+  }
+
+  section.experience .timeline {
+    &::before {
+      left: 3.5rem;
+    }
+
+    & > ul::before,
+    & > ul::after,
+    & li > .time-marker {
+      left: 2.5rem;
+    }
+
+    & > ul > li:nth-child(even) {
+      float: right;
+      text-align: left;
+    }
+
+    & li:nth-child(even) .time {
+      right: auto;
+      left: 0.5rem;
+    }
+
+    & > ul > li {
+      width: calc(90% - 2.5rem);
+    }
+  }
+
+  .footer .contact-list {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 151px;
   }
 }
