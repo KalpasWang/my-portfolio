@@ -414,6 +414,30 @@ main.home h1 {
   margin-top: 30vh;
 }
 
+main.home .container {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  -webkit-animation: slideUp 1s 0.5s forwards;
+          animation: slideUp 1s 0.5s forwards;
+}
+
+@-webkit-keyframes slideUp {
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 section.about {
   overflow: hidden;
   min-height: 100vh;
@@ -594,6 +618,22 @@ section.experience .timeline .description {
   font-size: 0.8rem;
 }
 
+section.experience .timeItem {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: opacity 0.5s linear, -webkit-transform 0.5s linear;
+  transition: opacity 0.5s linear, -webkit-transform 0.5s linear;
+  transition: transform 0.5s linear, opacity 0.5s linear;
+  transition: transform 0.5s linear, opacity 0.5s linear, -webkit-transform 0.5s linear;
+}
+
+section.experience .timeItem.show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 section.skills {
   overflow: hidden;
   min-height: 100vh;
@@ -648,6 +688,22 @@ section.skills .skills-list > li > .skills-sublist {
   list-style: disc;
   list-style-position: inside;
   font-size: 0.8rem;
+}
+
+section.skills .skills-list .skills-item {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: opacity 1s linear, -webkit-transform 1s linear;
+  transition: opacity 1s linear, -webkit-transform 1s linear;
+  transition: transform 1s linear, opacity 1s linear;
+  transition: transform 1s linear, opacity 1s linear, -webkit-transform 1s linear;
+}
+
+section.skills .skills-list .skills-item.show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 section.works {
@@ -763,6 +819,22 @@ section.works .projects .project-skill {
 
 section.works .projects .project-skillCaption {
   text-align: center;
+}
+
+section.works .projects .project {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: opacity 1s linear, -webkit-transform 1s linear;
+  transition: opacity 1s linear, -webkit-transform 1s linear;
+  transition: transform 1s linear, opacity 1s linear;
+  transition: transform 1s linear, opacity 1s linear, -webkit-transform 1s linear;
+}
+
+section.works .projects .project.show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .footer {
@@ -883,13 +955,7 @@ section.works .projects .project-skillCaption {
     width: calc(90% - 2.5rem);
   }
   .footer .contact-list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    display: block;
     margin: 0 auto;
     max-width: 151px;
   }
