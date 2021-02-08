@@ -94,6 +94,19 @@ main.home {
   h1 {
     margin-top: 30vh;
   }
+
+  .container {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 1s 0.5s forwards;
+  }
+
+  @keyframes slideUp {
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 // 關於我
@@ -261,6 +274,16 @@ section.experience {
       font-size: 0.8rem;
     }
   }
+  .timeItem {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s linear, opacity 0.5s linear;
+  }
+
+  .timeItem.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 section.skills {
@@ -309,6 +332,17 @@ section.skills {
       list-style: disc;
       list-style-position: inside;
       font-size: 0.8rem;
+    }
+
+    .skills-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform 1s linear, opacity 1s linear;
+    }
+
+    .skills-item.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
@@ -400,6 +434,17 @@ section.works {
       &-skillCaption {
         text-align: center;
       }
+    }
+
+    .project {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform 1s linear, opacity 1s linear;
+    }
+
+    .project.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

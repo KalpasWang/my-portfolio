@@ -76,8 +76,7 @@
   }
 
   .footer .contact-list {
-    flex-direction: column;
-    align-items: flex-start;
+    display: block;
     margin: 0 auto;
     max-width: 151px;
   }
