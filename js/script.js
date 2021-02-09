@@ -83,13 +83,13 @@ $(function () {
   });
 
   // 設定滑動到要出現動畫的元素
-  $('.timeItem, .skills-item, .project').each(function () {
+  $('.time-item, .skills-item, .project').each(function () {
     const $this = $(this);
     const offset = $this.offset();
     const extraHeight = $window.height() * 0.8;
 
-    if ($window.scrollTop() > offset.top - extraHeight) {
-      $this.addClass('show');
+    if ($window.scrollTop() < offset.top - extraHeight) {
+      $this.addClass('hide');
     }
 
     $this.scrollspy({
@@ -97,9 +97,7 @@ $(function () {
       max: offset.top + $this.height() - extraHeight,
       onEnter(el) {
         $el = $(el);
-        if (!$el.hasClass('show')) {
-          $el.addClass('show');
-        }
+        $el.removeClass('hide');
       },
     });
   });
