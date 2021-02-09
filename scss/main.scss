@@ -43,6 +43,12 @@ a {
   }
 }
 
+.hide {
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  @include linear;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -194,32 +200,35 @@ section.experience {
     & > ul > li {
       width: 46%;
       margin: 1.5rem 0;
+      opacity: 1;
+      transform: translateY(0);
+      @include linear;
     }
 
-    & > ul > li:nth-child(odd) {
+    & > ul > li:nth-of-type(odd) {
       float: right;
       text-align: left;
       clear: both;
     }
 
-    & > ul > li:nth-child(even) {
+    & > ul > li:nth-of-type(even) {
       float: left;
       text-align: right;
       clear: both;
     }
 
-    & li > .time-marker {
+    & > ul > .time-marker {
       position: absolute;
       top: 24.9%;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    & li:nth-child(2) > .time-marker {
+    & > ul > .time-marker2 {
       top: 51%;
     }
 
-    & li:nth-child(3) > .time-marker {
+    & > ul > .time-marker3 {
       top: 77.1%;
     }
 
@@ -227,7 +236,15 @@ section.experience {
       @include easeOut;
     }
 
-    & li:hover polygon {
+    & .time-item1:hover + .time-marker1 polygon {
+      fill: #eece1a;
+    }
+
+    & .time-item2:hover + .time-marker2 polygon {
+      fill: #eece1a;
+    }
+
+    & .time-item3:hover + .time-marker3 polygon {
       fill: #eece1a;
     }
 
@@ -274,16 +291,6 @@ section.experience {
       font-size: 0.8rem;
     }
   }
-  .timeItem {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: transform 0.5s linear, opacity 0.5s linear;
-  }
-
-  .timeItem.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 section.skills {
@@ -294,9 +301,9 @@ section.skills {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 1.5rem auto 1rem;
+    margin: 4.5rem auto 0;
 
-    & > li {
+    & > .skills-item {
       width: 30%;
       max-width: 20rem;
       min-width: 16rem;
@@ -306,10 +313,12 @@ section.skills {
       border-bottom: 3px solid $secondary-color;
       background: lighten($primary-color, 5);
       text-align: center;
+      opacity: 1;
+      transform: translateY(0);
       @include easeOut;
     }
 
-    & > li:hover {
+    & > .skills-item:hover {
       background: $secondary-color;
       color: $text-dark-color;
     }
@@ -324,25 +333,14 @@ section.skills {
       @include easeOut;
     }
 
-    & > li:hover > .fas {
+    & > .skills-item:hover > .fas {
       color: $text-dark-color;
     }
 
-    & > li > .skills-sublist {
+    & > .skills-item > .skills-sublist {
       list-style: disc;
       list-style-position: inside;
       font-size: 0.8rem;
-    }
-
-    .skills-item {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: transform 1s linear, opacity 1s linear;
-    }
-
-    .skills-item.show {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 }
@@ -364,6 +362,9 @@ section.works {
       max-width: 20rem;
       min-width: 16rem;
       margin: 1rem;
+      opacity: 1;
+      transform: translateY(0);
+      @include linear;
 
       &-box {
         width: 100%;
@@ -434,17 +435,6 @@ section.works {
       &-skillCaption {
         text-align: center;
       }
-    }
-
-    .project {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: transform 1s linear, opacity 1s linear;
-    }
-
-    .project.show {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 }

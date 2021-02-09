@@ -362,6 +362,14 @@ a:hover {
   color: #eece1a;
 }
 
+.hide {
+  opacity: 0 !important;
+  -webkit-transform: translateY(20px) !important;
+          transform: translateY(20px) !important;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -535,21 +543,26 @@ section.experience .timeline > ul::after {
 section.experience .timeline > ul > li {
   width: 46%;
   margin: 1.5rem 0;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
-section.experience .timeline > ul > li:nth-child(odd) {
+section.experience .timeline > ul > li:nth-of-type(odd) {
   float: right;
   text-align: left;
   clear: both;
 }
 
-section.experience .timeline > ul > li:nth-child(even) {
+section.experience .timeline > ul > li:nth-of-type(even) {
   float: left;
   text-align: right;
   clear: both;
 }
 
-section.experience .timeline li > .time-marker {
+section.experience .timeline > ul > .time-marker {
   position: absolute;
   top: 24.9%;
   left: 50%;
@@ -557,11 +570,11 @@ section.experience .timeline li > .time-marker {
           transform: translateX(-50%);
 }
 
-section.experience .timeline li:nth-child(2) > .time-marker {
+section.experience .timeline > ul > .time-marker2 {
   top: 51%;
 }
 
-section.experience .timeline li:nth-child(3) > .time-marker {
+section.experience .timeline > ul > .time-marker3 {
   top: 77.1%;
 }
 
@@ -570,7 +583,15 @@ section.experience .timeline li polygon {
   transition: all 0.5s ease-out;
 }
 
-section.experience .timeline li:hover polygon {
+section.experience .timeline .time-item1:hover + .time-marker1 polygon {
+  fill: #eece1a;
+}
+
+section.experience .timeline .time-item2:hover + .time-marker2 polygon {
+  fill: #eece1a;
+}
+
+section.experience .timeline .time-item3:hover + .time-marker3 polygon {
   fill: #eece1a;
 }
 
@@ -618,22 +639,6 @@ section.experience .timeline .description {
   font-size: 0.8rem;
 }
 
-section.experience .timeItem {
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
-  -webkit-transition: opacity 0.5s linear, -webkit-transform 0.5s linear;
-  transition: opacity 0.5s linear, -webkit-transform 0.5s linear;
-  transition: transform 0.5s linear, opacity 0.5s linear;
-  transition: transform 0.5s linear, opacity 0.5s linear, -webkit-transform 0.5s linear;
-}
-
-section.experience .timeItem.show {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
 section.skills {
   overflow: hidden;
   min-height: 100vh;
@@ -647,10 +652,10 @@ section.skills .skills-list {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 1.5rem auto 1rem;
+  margin: 4.5rem auto 0;
 }
 
-section.skills .skills-list > li {
+section.skills .skills-list > .skills-item {
   width: 30%;
   max-width: 20rem;
   min-width: 16rem;
@@ -660,11 +665,14 @@ section.skills .skills-list > li {
   border-bottom: 3px solid #eece1a;
   background: #515151;
   text-align: center;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
-section.skills .skills-list > li:hover {
+section.skills .skills-list > .skills-item:hover {
   background: #eece1a;
   color: #111;
 }
@@ -680,30 +688,14 @@ section.skills .skills-list .fas {
   transition: all 0.5s ease-out;
 }
 
-section.skills .skills-list > li:hover > .fas {
+section.skills .skills-list > .skills-item:hover > .fas {
   color: #111;
 }
 
-section.skills .skills-list > li > .skills-sublist {
+section.skills .skills-list > .skills-item > .skills-sublist {
   list-style: disc;
   list-style-position: inside;
   font-size: 0.8rem;
-}
-
-section.skills .skills-list .skills-item {
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
-  -webkit-transition: opacity 1s linear, -webkit-transform 1s linear;
-  transition: opacity 1s linear, -webkit-transform 1s linear;
-  transition: transform 1s linear, opacity 1s linear;
-  transition: transform 1s linear, opacity 1s linear, -webkit-transform 1s linear;
-}
-
-section.skills .skills-list .skills-item.show {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
 }
 
 section.works {
@@ -736,6 +728,11 @@ section.works .projects .project {
   max-width: 20rem;
   min-width: 16rem;
   margin: 1rem;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 section.works .projects .project-box {
@@ -819,22 +816,6 @@ section.works .projects .project-skill {
 
 section.works .projects .project-skillCaption {
   text-align: center;
-}
-
-section.works .projects .project {
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
-  -webkit-transition: opacity 1s linear, -webkit-transform 1s linear;
-  transition: opacity 1s linear, -webkit-transform 1s linear;
-  transition: transform 1s linear, opacity 1s linear;
-  transition: transform 1s linear, opacity 1s linear, -webkit-transform 1s linear;
-}
-
-section.works .projects .project.show {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
 }
 
 .footer {

@@ -12,6 +12,10 @@ $bar-height: 40px;
   transition: all 0.5s ease-out;
 }
 
+@mixin linear {
+  transition: all 0.5s linear;
+}
+
 @mixin mediaXl {
   @media screen {
     @content;
