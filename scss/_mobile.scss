@@ -56,22 +56,28 @@
 
     & > ul::before,
     & > ul::after,
-    & li > .time-marker {
+    & > ul > .time-marker {
       left: 2.5rem;
     }
 
-    & > ul > li:nth-child(even) {
+    & > ul > li:nth-of-type(even) {
       float: right;
       text-align: left;
     }
 
-    & li:nth-child(even) .time {
+    & li:nth-of-type(even) .time {
       right: auto;
       left: 0.5rem;
     }
 
     & > ul > li {
       width: calc(90% - 2.5rem);
+    }
+  }
+
+  section.skills {
+    .skills-list {
+      margin-top: 1.5rem;
     }
   }
 

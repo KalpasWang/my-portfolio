@@ -418,13 +418,19 @@ main.home .icons a {
   padding: 0 0.4rem;
 }
 
-main.home h1 {
-  margin-top: 30vh;
+main.home .container {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
-main.home .container {
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
+main.home .content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
   opacity: 0;
   -webkit-animation: slideUp 1s 0.5s forwards;
           animation: slideUp 1s 0.5s forwards;
@@ -433,22 +439,22 @@ main.home .container {
 @-webkit-keyframes slideUp {
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
 @keyframes slideUp {
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
 section.about {
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 75vh;
   background: #444;
   color: #f1f1f1;
 }
@@ -485,7 +491,6 @@ section.about .about-info .bio {
 
 section.experience {
   overflow: hidden;
-  min-height: 100vh;
 }
 
 section.experience .timeline {
@@ -641,7 +646,7 @@ section.experience .timeline .description {
 
 section.skills {
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 75vh;
 }
 
 section.skills .skills-list {
@@ -652,12 +657,15 @@ section.skills .skills-list {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 4.5rem auto 0;
+  margin: 3.5rem auto 0;
 }
 
 section.skills .skills-list > .skills-item {
   width: 30%;
-  max-width: 20rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 25rem;
   min-width: 16rem;
   min-height: 14rem;
   margin: 1rem;
@@ -700,7 +708,6 @@ section.skills .skills-list > .skills-item > .skills-sublist {
 
 section.works {
   overflow: hidden;
-  min-height: 100vh;
   background: #444;
   color: #f1f1f1;
 }
@@ -715,9 +722,6 @@ section.works .projects {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -725,7 +729,10 @@ section.works .projects {
 }
 
 section.works .projects .project {
-  max-width: 20rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 30%;
   min-width: 16rem;
   margin: 1rem;
   opacity: 1;
@@ -921,19 +928,22 @@ section.works .projects .project-skillCaption {
   }
   section.experience .timeline > ul::before,
   section.experience .timeline > ul::after,
-  section.experience .timeline li > .time-marker {
+  section.experience .timeline > ul > .time-marker {
     left: 2.5rem;
   }
-  section.experience .timeline > ul > li:nth-child(even) {
+  section.experience .timeline > ul > li:nth-of-type(even) {
     float: right;
     text-align: left;
   }
-  section.experience .timeline li:nth-child(even) .time {
+  section.experience .timeline li:nth-of-type(even) .time {
     right: auto;
     left: 0.5rem;
   }
   section.experience .timeline > ul > li {
     width: calc(90% - 2.5rem);
+  }
+  section.skills .skills-list {
+    margin-top: 1.5rem;
   }
   .footer .contact-list {
     display: block;
