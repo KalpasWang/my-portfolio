@@ -453,7 +453,18 @@ section.works {
 
   &-title {
     margin-bottom: 1rem;
+  }
+
+  &-logo {
     color: $secondary-color;
+    text-decoration: none;
+    img {
+      vertical-align: bottom;
+    }
+  }
+
+  &-logo:hover {
+    text-decoration: underline;
   }
 
   .contact {
