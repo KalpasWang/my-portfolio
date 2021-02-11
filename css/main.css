@@ -834,7 +834,19 @@ section.works .projects .project-skillCaption {
 
 .footer-title {
   margin-bottom: 1rem;
+}
+
+.footer-logo {
   color: #eece1a;
+  text-decoration: none;
+}
+
+.footer-logo img {
+  vertical-align: bottom;
+}
+
+.footer-logo:hover {
+  text-decoration: underline;
 }
 
 .footer .contact-list {

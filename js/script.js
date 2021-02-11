@@ -37,9 +37,10 @@ $(function () {
       // 如果對象是 spyingAreas
       if (isSpyingAreas) {
         // 計算剛載入頁面時要 highlight 的 menu item
-        $menuGroup.removeClass('current');
-        if ($window.scrollTop() >= min /* &&  $window.scrollTop() <= max */) {
-          $('#' + $this.data('menu')).addClass('current');
+        const $targetMenuItem = $('#' + $this.data('menu'));
+        $targetMenuItem.removeClass('current');
+        if ($window.scrollTop() >= min && $window.scrollTop() <= max) {
+          $targetMenuItem.addClass('current');
         }
       } else {
         // 當卷軸位置小於 min，才隱藏要動畫的對象
@@ -84,7 +85,7 @@ $(function () {
   // 按下 menu link 後滑動到相對應的位置
   $('.menu-nav-link').click(function (e) {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
     $('html,body').animate(
       {
         scrollTop: $(e.target.hash).offset().top,

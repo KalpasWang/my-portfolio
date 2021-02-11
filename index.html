@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+TC"
       rel="stylesheet"
@@ -16,6 +17,23 @@
     />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <title>Kalpas Wang(王偉航)</title>
+    <meta name="description" content="王偉航 (Kalpas Wang) 的個人作品集網站" />
+    <meta name="keywords" content="Kalpas Wang, 王偉航, portfolio, website" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="王偉航 (Kalpas Wang) 的個人作品集網站" />
+    <meta
+      property="og:description"
+      content="由王偉航（Kalpas Wang）所設計與製作的個人介紹與作品集網站"
+    />
+    <meta
+      property="og:url"
+      content="https://kalpaswang.github.io/my-portfolio/dist"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/Logo.png" />
+    <meta property="og:image:type" content="png" />
+    <meta property="og:image:width" content="32" />
+    <meta property="og:image:height" content="32" />
   </head>
   <body>
     <header>
@@ -81,12 +99,14 @@
               本來就讀電機系，但是因為手術失敗導致行動不便。
               <br /><br />
               2018 年開始自學網頁開發，加入六角學院，熟悉原生 JavaScript ES6
-              開發，以及 VueJS，ReactJS 等前端框架。
+              開發，以及 VueJS，jQuery 等前端框架。
               <br /><br />
               曾經在擔任過六角學院的遠端助教，也有在六角學院接過大型專案。
             </p>
             <br /><br />
-            <p class="text-secondary">熟悉 React、Vue、GSAP、Pixi.js 等</p>
+            <p class="text-secondary">
+              熟悉 Vue、Pixi.js、jQuery、Bootstrap、Sass 等
+            </p>
           </div>
         </div>
       </div>
@@ -583,7 +603,11 @@
     </section>
 
     <footer id="footer" class="footer">
-      <h2 class="footer-title sm-heading">Kalpas Wang</h2>
+      <h2 class="footer-title sm-heading">
+        <a href="#" class="footer-logo">
+          <img src="img/Logo.png" alt="logo" /> Kalpas Wang
+        </a>
+      </h2>
       <ul class="contact-list">
         <li class="contact-item">
           <a
@@ -633,7 +657,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script src="js/jquery-scrollspy.js"></script>
+    <script src="js/jquery-scrollspy.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
