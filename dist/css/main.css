@@ -410,6 +410,12 @@ main.home .bg-overlay {
 }
 
 main.home .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-top: 1rem;
   z-index: 0;
 }
@@ -497,6 +503,11 @@ section.experience .timeline {
   position: relative;
   margin: 4rem auto 0;
   width: 80%;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 section.experience .timeline::before {
@@ -548,11 +559,6 @@ section.experience .timeline > ul::after {
 section.experience .timeline > ul > li {
   width: 46%;
   margin: 1.5rem 0;
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
 }
 
 section.experience .timeline > ul > li:nth-of-type(odd) {
@@ -567,7 +573,7 @@ section.experience .timeline > ul > li:nth-of-type(even) {
   clear: both;
 }
 
-section.experience .timeline > ul > .time-marker {
+section.experience .timeline > ul .time-marker {
   position: absolute;
   top: 24.9%;
   left: 50%;
@@ -575,11 +581,11 @@ section.experience .timeline > ul > .time-marker {
           transform: translateX(-50%);
 }
 
-section.experience .timeline > ul > .time-marker2 {
+section.experience .timeline > ul .time-marker2 {
   top: 51%;
 }
 
-section.experience .timeline > ul > .time-marker3 {
+section.experience .timeline > ul .time-marker3 {
   top: 77.1%;
 }
 
@@ -588,15 +594,15 @@ section.experience .timeline li polygon {
   transition: all 0.5s ease-out;
 }
 
-section.experience .timeline .time-item1:hover + .time-marker1 polygon {
+section.experience .timeline .time-item1:hover .time-marker1 polygon {
   fill: #eece1a;
 }
 
-section.experience .timeline .time-item2:hover + .time-marker2 polygon {
+section.experience .timeline .time-item2:hover .time-marker2 polygon {
   fill: #eece1a;
 }
 
-section.experience .timeline .time-item3:hover + .time-marker3 polygon {
+section.experience .timeline .time-item3:hover .time-marker3 polygon {
   fill: #eece1a;
 }
 
@@ -743,7 +749,6 @@ section.works .projects .project {
 }
 
 section.works .projects .project-box {
-  width: 100%;
   background: #515151;
   border-radius: 0.5rem;
   overflow: hidden;

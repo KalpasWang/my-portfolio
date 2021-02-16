@@ -3,7 +3,7 @@ $(function () {
   const $menuBtn = $('.menu-btn');
   const $menuGroup = $('.menu, .menu-nav, .menu-item');
   const $spyingAreas = $('#home, #about, #experience, #skills, #works');
-  const $animatingAreas = $('.time-item, .skills-item, .project');
+  const $animatingAreas = $('.timeline, .skills-item, .project');
   let showMenu = false;
 
   // 加上選單按鈕與 X 切換效果

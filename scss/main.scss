@@ -89,6 +89,8 @@ main.home {
   }
 
   .icons {
+    display: flex;
+    justify-content: flex-start;
     margin-top: 1rem;
     z-index: 0;
 
@@ -159,6 +161,9 @@ section.experience {
     position: relative;
     margin: 4rem auto 0;
     width: 80%;
+    opacity: 1;
+    transform: translateY(0);
+    @include linear;
 
     &::before {
       content: '';
@@ -206,9 +211,6 @@ section.experience {
     & > ul > li {
       width: 46%;
       margin: 1.5rem 0;
-      opacity: 1;
-      transform: translateY(0);
-      @include linear;
     }
 
     & > ul > li:nth-of-type(odd) {
@@ -223,18 +225,18 @@ section.experience {
       clear: both;
     }
 
-    & > ul > .time-marker {
+    & > ul .time-marker {
       position: absolute;
       top: 24.9%;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    & > ul > .time-marker2 {
+    & > ul .time-marker2 {
       top: 51%;
     }
 
-    & > ul > .time-marker3 {
+    & > ul .time-marker3 {
       top: 77.1%;
     }
 
@@ -242,15 +244,15 @@ section.experience {
       @include easeOut;
     }
 
-    & .time-item1:hover + .time-marker1 polygon {
+    & .time-item1:hover .time-marker1 polygon {
       fill: #eece1a;
     }
 
-    & .time-item2:hover + .time-marker2 polygon {
+    & .time-item2:hover .time-marker2 polygon {
       fill: #eece1a;
     }
 
-    & .time-item3:hover + .time-marker3 polygon {
+    & .time-item3:hover .time-marker3 polygon {
       fill: #eece1a;
     }
 
@@ -373,7 +375,6 @@ section.works {
       @include linear;
 
       &-box {
-        width: 100%;
         background: lighten($primary-color, 5);
         border-radius: 0.5rem;
         overflow: hidden;
