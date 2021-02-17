@@ -912,6 +912,11 @@ section.works .projects .project-skillCaption {
   section {
     text-align: center;
   }
+  main.home .icons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   h1.lg-heading {
     font-size: 3rem;
   }
@@ -945,7 +950,7 @@ section.works .projects .project-skillCaption {
   }
   section.experience .timeline > ul::before,
   section.experience .timeline > ul::after,
-  section.experience .timeline > ul > .time-marker {
+  section.experience .timeline > ul .time-marker {
     left: 2.5rem;
   }
   section.experience .timeline > ul > li:nth-of-type(even) {

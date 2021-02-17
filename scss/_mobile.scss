@@ -15,6 +15,10 @@
     text-align: center;
   }
 
+  main.home .icons {
+    justify-content: center;
+  }
+
   h1.lg-heading {
     font-size: 3rem;
   }
@@ -56,7 +60,7 @@
 
     & > ul::before,
     & > ul::after,
-    & > ul > .time-marker {
+    & > ul .time-marker {
       left: 2.5rem;
     }
 
