@@ -439,9 +439,23 @@ section.works {
         font-size: 0.8rem;
       }
 
+      &-skillIcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       &-skillCaption {
         text-align: center;
       }
+    }
+
+    .project:nth-child(2) .project-img {
+      background-image: url(../img/sweetaste.png);
+    }
+
+    .project:nth-child(3) .project-img {
+      background-image: url(../img/bmi-calculator.png);
     }
   }
 }
