@@ -826,8 +826,29 @@ section.works .projects .project-skill {
   font-size: 0.8rem;
 }
 
+section.works .projects .project-skillIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 section.works .projects .project-skillCaption {
   text-align: center;
+}
+
+section.works .projects .project:nth-child(2) .project-img {
+  background-image: url(../img/sweetaste.png);
+}
+
+section.works .projects .project:nth-child(3) .project-img {
+  background-image: url(../img/bmi-calculator.png);
 }
 
 .footer {
@@ -970,7 +991,7 @@ section.works .projects .project-skillCaption {
   .footer .contact-list {
     display: block;
     margin: 0 auto;
-    max-width: 151px;
+    max-width: 140px;
   }
 }
 /*# sourceMappingURL=main.css.map */
