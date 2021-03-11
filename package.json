@@ -4,7 +4,8 @@
   "description": "my personal portfolio",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass scss/ -o dist/css/ --output-style expanded"
+    "sass": "node-sass scss/ -o dist/css/ --output-style expanded",
+    "ghpages": "git subtree push --prefix=dist origin gh-pages"
   },
   "author": "Kalpas Wang",
   "license": "MIT",
