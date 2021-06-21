@@ -559,6 +559,7 @@ section.experience .timeline > ul::after {
 section.experience .timeline > ul > li {
   width: 46%;
   margin: 1.5rem 0;
+  position: relative;
 }
 
 section.experience .timeline > ul > li:nth-of-type(odd) {
@@ -573,20 +574,20 @@ section.experience .timeline > ul > li:nth-of-type(even) {
   clear: both;
 }
 
-section.experience .timeline > ul .time-marker {
+section.experience .timeline > ul > li:nth-last-of-type(odd) > .time-marker {
   position: absolute;
-  top: 24.9%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 50%;
+  left: calc(-8.69% - 12px);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
-section.experience .timeline > ul .time-marker2 {
-  top: 51%;
-}
-
-section.experience .timeline > ul .time-marker3 {
-  top: 77.1%;
+section.experience .timeline > ul > li:nth-last-of-type(even) > .time-marker {
+  position: absolute;
+  top: 50%;
+  right: calc(-8.69% - 12px);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 section.experience .timeline li polygon {
@@ -967,23 +968,26 @@ section.works .projects .project:nth-child(3) .project-img {
     font-size: 1.2rem;
   }
   section.experience .timeline::before {
-    left: 3.5rem;
+    left: calc(5% + 1rem);
   }
   section.experience .timeline > ul::before,
-  section.experience .timeline > ul::after,
-  section.experience .timeline > ul .time-marker {
-    left: 2.5rem;
+  section.experience .timeline > ul::after {
+    left: 5%;
+  }
+  section.experience .timeline > ul > li {
+    width: 80%;
   }
   section.experience .timeline > ul > li:nth-of-type(even) {
     float: right;
     text-align: left;
   }
-  section.experience .timeline li:nth-of-type(even) .time {
-    right: auto;
-    left: 0.5rem;
+  section.experience .timeline > ul > li > .time-marker {
+    right: unset !important;
+    left: calc(-18.75% - 10px) !important;
   }
-  section.experience .timeline > ul > li {
-    width: calc(90% - 2.5rem);
+  section.experience .timeline li:nth-of-type(even) .time {
+    right: unset;
+    left: 0.5rem;
   }
   section.skills .skills-list {
     margin-top: 1.5rem;
