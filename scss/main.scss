@@ -211,6 +211,7 @@ section.experience {
     & > ul > li {
       width: 46%;
       margin: 1.5rem 0;
+      position: relative;
     }
 
     & > ul > li:nth-of-type(odd) {
@@ -225,19 +226,18 @@ section.experience {
       clear: both;
     }
 
-    & > ul .time-marker {
+    & > ul > li:nth-last-of-type(odd) > .time-marker {
       position: absolute;
-      top: 24.9%;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 50%;
+      left: calc(-8.69% - 12px);
+      transform: translate(0, -50%);
     }
 
-    & > ul .time-marker2 {
-      top: 51%;
-    }
-
-    & > ul .time-marker3 {
-      top: 77.1%;
+    & > ul > li:nth-last-of-type(even) > .time-marker {
+      position: absolute;
+      top: 50%;
+      right: calc(-8.69% - 12px);
+      transform: translate(0, -50%);
     }
 
     & li polygon {
