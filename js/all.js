@@ -53,37 +53,63 @@
     });
   });
 
+  /* 技能卡片特效 */
   const t2 = gsap.timeline();
   const boxes = gsap.utils.toArray('.skills-item');
-  boxes.forEach((item) => {
-    item.style.opacity = 0;
-  });
-  let observer = new IntersectionObserver(
+  t2.set(boxes, { opacity: 0 });
+
+  const observer = new IntersectionObserver(
     function (entries, self) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          let overlap = '-=0.15';
-
-          if (!t2.isActive()) {
-            overlap = '+=0';
-          }
-
-          t2.set(entry.target, { y: -50 }).to(
-            entry.target,
-            {
-              opacity: 1,
-              duration: 0.3,
-            },
-            overlap
-          );
+          setAnimation(t2, entry.target);
           self.unobserve(entry.target);
         }
       });
     },
-    { threshold: 1 }
+    { threshold: 0.8 }
   );
 
   boxes.forEach((box) => {
     observer.observe(box);
   });
+
+  /* 專案卡片特效 */
+  const t3 = gsap.timeline();
+  const projects = gsap.utils.toArray('li.project');
+  t3.set(projects, { opacity: 0 });
+
+  const observer2 = new IntersectionObserver(
+    function (entries, self) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimation(t3, entry.target);
+          self.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.8 }
+  );
+
+  projects.forEach((project) => {
+    observer2.observe(project);
+  });
 })();
+
+function setAnimation(timeline, target) {
+  let overlap = '-=0.15';
+
+  if (!timeline.isActive()) {
+    overlap = '+=0';
+  }
+
+  timeline.set(target, { y: 80 }, overlap).to(
+    target,
+    {
+      opacity: 1,
+      duration: 0.3,
+      y: 0,
+    },
+    overlap
+  );
+}
