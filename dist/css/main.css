@@ -709,8 +709,14 @@ section.skills .skills-list > .skills-item:hover > .fas {
 
 section.skills .skills-list > .skills-item > .skills-sublist {
   list-style: disc;
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-left: 0.8rem;
   font-size: 0.8rem;
+  text-align: left;
+}
+
+section.skills .skills-list .skills-sublist > li {
+  margin: 5px 0;
 }
 
 section.works {

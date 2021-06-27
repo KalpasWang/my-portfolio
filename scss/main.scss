@@ -348,8 +348,14 @@ section.skills {
 
     & > .skills-item > .skills-sublist {
       list-style: disc;
-      list-style-position: inside;
+      list-style-position: outside;
+      padding-left: 0.8rem;
       font-size: 0.8rem;
+      text-align: left;
+    }
+
+    & .skills-sublist > li {
+      margin: 5px 0;
     }
   }
 }
