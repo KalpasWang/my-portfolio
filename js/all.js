@@ -27,8 +27,45 @@
 
   // 用 GSAP 與 GSAP ScrollTrigger 套件做捲軸動畫
   gsap.registerPlugin(ScrollTrigger);
-  // GSDevTools.create();
 
+  // 關於我文字圖片浮現特效
+  const t1 = gsap.timeline({
+    defaults: {
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power1.in',
+    },
+    scrollTrigger: {
+      trigger: '.about-info',
+      start: 'center bottom',
+    },
+  });
+  t1.from('#bio-image', {
+    y: 100,
+  })
+    .from(
+      '#bio1',
+      {
+        x: 200,
+      },
+      '-=0.25'
+    )
+    .from(
+      '#bio2',
+      {
+        x: 200,
+      },
+      '-=0.25'
+    )
+    .from(
+      '#bio3',
+      {
+        x: 200,
+      },
+      '-=0.25'
+    );
+
+  // 時間軸特效
   gsap.from('.timeline', {
     y: 50,
     opacity: 0,

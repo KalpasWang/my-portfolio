@@ -459,7 +459,6 @@ main.home .content {
 }
 
 section.about {
-  overflow: hidden;
   min-height: 75vh;
   background: #444;
   color: #f1f1f1;
@@ -493,6 +492,10 @@ section.about .about-info .bio {
   max-width: 35rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+section.about .about-info .bio > p {
+  margin-bottom: 1.5rem;
 }
 
 section.experience {
