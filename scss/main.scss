@@ -125,7 +125,6 @@ main.home {
 
 // 關於我
 section.about {
-  overflow: hidden;
   min-height: 75vh;
   background: $primary-color;
   color: $text-color;
@@ -149,6 +148,10 @@ section.about {
       max-width: 35rem;
       margin-top: 1rem;
       margin-bottom: 1rem;
+    }
+
+    .bio > p {
+      margin-bottom: 1.5rem;
     }
   }
 }
