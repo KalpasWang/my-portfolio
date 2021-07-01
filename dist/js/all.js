@@ -5,8 +5,6 @@
   const menuItems = document.getElementsByClassName('menu-item');
   const menuGroup = [menu].concat([menuNav], Array.from(menuItems));
   let showMenu = false;
-  // const $spyingAreas = $('#home, #about, #experience, #skills, #works');
-  // const $animatingAreas = $('.timeline, .skills-item, .project');
 
   // 加上選單按鈕與 X 切換效果
   menuBtn.addEventListener('click', () => {
@@ -30,12 +28,27 @@
 
   // scrollSpy 效果與 scrollTo 效果
   $('#home, #about, #experience, #skills, #works').each((i, el) => {
+    const menuItem = '#' + $(el).data('menu');
+
+    // 滑動效果
+    $(menuItem)
+      .children()
+      .click((e) => {
+        e.preventDefault();
+        $('html,body').animate(
+          {
+            scrollTop: $(el).offset().top,
+          },
+          500
+        );
+      });
+
+    // scrollSpy
     ScrollTrigger.create({
       trigger: el,
-      start: 'top 40%',
-      end: 'bottom 40%',
-      markers: true,
-      onToggle: () => $('#' + $(el).data('menu')).toggleClass('current'),
+      start: 'top 45%',
+      end: 'bottom 45%',
+      onToggle: () => $(menuItem).toggleClass('current'),
     });
   });
 
