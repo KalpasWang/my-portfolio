@@ -28,6 +28,17 @@
   // 用 GSAP 與 GSAP ScrollTrigger 套件做捲軸動畫
   gsap.registerPlugin(ScrollTrigger);
 
+  // scrollSpy 效果與 scrollTo 效果
+  $('#home, #about, #experience, #skills, #works').each((i, el) => {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 40%',
+      end: 'bottom 40%',
+      markers: true,
+      onToggle: () => $('#' + $(el).data('menu')).toggleClass('current'),
+    });
+  });
+
   // 關於我文字圖片浮現特效
   const t1 = gsap.timeline({
     defaults: {
