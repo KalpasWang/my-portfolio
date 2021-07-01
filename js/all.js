@@ -1,36 +1,21 @@
-(function () {
-  const menuBtn = document.querySelector('.menu-btn');
-  const menu = document.querySelector('.menu');
-  const menuNav = document.querySelector('.menu-nav');
-  const menuItems = document.getElementsByClassName('menu-item');
-  const menuGroup = [menu].concat([menuNav], Array.from(menuItems));
-  let showMenu = false;
+$(function () {
+  const $menuBtn = $('.menu-btn');
+  const $menuGroup = $('.menu, .menu-nav, .menu-item');
 
-  // 加上選單按鈕與 X 切換效果
-  menuBtn.addEventListener('click', () => {
-    if (!showMenu) {
-      menuBtn.classList.add('close');
-      menuGroup.forEach((el) => {
-        el.classList.add('show');
-      });
-      showMenu = true;
-    } else {
-      menuBtn.classList.remove('close');
-      menuGroup.forEach((el) => {
-        el.classList.remove('show');
-      });
-      showMenu = false;
-    }
+  /* 加上選單按鈕與 X 切換效果 */
+  $menuBtn.click(function () {
+    $menuBtn.toggleClass('close');
+    $menuGroup.toggleClass('show');
   });
 
   // 用 GSAP 與 GSAP ScrollTrigger 套件做捲軸動畫
   gsap.registerPlugin(ScrollTrigger);
 
-  // scrollSpy 效果與 scrollTo 效果
+  /* scrollSpy 效果與 scrollTo 效果 */
   $('#home, #about, #experience, #skills, #works').each((i, el) => {
     const menuItem = '#' + $(el).data('menu');
 
-    // 滑動效果
+    // 選單連結點擊後的滑動效果
     $(menuItem)
       .children()
       .click((e) => {
@@ -52,64 +37,43 @@
     });
   });
 
-  // 關於我文字圖片浮現特效
+  /* 關於我文字圖片浮現特效 */
   const t1 = gsap.timeline({
     defaults: {
       opacity: 0,
-      duration: 0.5,
-      ease: 'power1.in',
+      duration: 0.3,
+      ease: 'power1.inOut',
     },
     scrollTrigger: {
       trigger: '.about-info',
       start: 'center bottom',
     },
   });
-  t1.from('#bio-image', {
-    y: 100,
-  })
-    .from(
-      '#bio1',
-      {
-        x: 200,
-      },
-      '-=0.25'
-    )
-    .from(
-      '#bio2',
-      {
-        x: 200,
-      },
-      '-=0.25'
-    )
-    .from(
-      '#bio3',
-      {
-        x: 200,
-      },
-      '-=0.25'
-    );
 
-  // 時間軸特效
+  t1.from('#bio-image', { y: 100 })
+    .from('#bio1', { x: 100 }, '-=0.1')
+    .from('#bio2', { x: 100 }, '-=0.2')
+    .from('#bio3', { x: 100 }, '-=0.2');
+
+  /* 時間軸特效 */
   gsap.from('.timeline', {
-    y: 50,
     opacity: 0,
-    ease: 'power1.inOut',
     duration: 0.25,
     scrollTrigger: {
       trigger: '.timeline',
-      start: 'top 70%',
+      start: 'top 80%',
     },
   });
 
   gsap.utils.toArray('.time-item').forEach((item) => {
     gsap.from(item, {
-      y: 50,
+      y: 10,
       opacity: 0,
       ease: 'power1.inOut',
       duration: 0.25,
       scrollTrigger: {
         trigger: item,
-        start: 'top 70%',
+        start: 'bottom bottom',
       },
     });
   });
@@ -149,13 +113,13 @@
         }
       });
     },
-    { threshold: 0.8 }
+    { threshold: 0.5 }
   );
 
   projects.forEach((project) => {
     observer2.observe(project);
   });
-})();
+});
 
 function setAnimation(timeline, target) {
   let overlap = '-=0.15';
