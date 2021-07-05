@@ -838,6 +838,7 @@ section.works .projects .project-skillsList {
 section.works .projects .project-skill {
   color: #d8d8d8;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   font-size: 0.8rem;
 }
 
@@ -880,14 +881,18 @@ section.works .projects .project:nth-child(4) .project-img {
 }
 
 section.works .projects .project:nth-child(5) .project-img {
-  background-image: url(../img/hex-restaurant.png);
+  background-image: url(../img/portfolio.jpg);
 }
 
 section.works .projects .project:nth-child(6) .project-img {
-  background-image: url(../img/sweetaste.png);
+  background-image: url(../img/hex-restaurant.png);
 }
 
 section.works .projects .project:nth-child(7) .project-img {
+  background-image: url(../img/sweetaste.png);
+}
+
+section.works .projects .project:nth-child(8) .project-img {
   background-image: url(../img/bmi-calculator.png);
 }
 

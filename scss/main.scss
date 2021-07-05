@@ -448,6 +448,7 @@ section.works {
       &-skill {
         color: darken($text-color, 10);
         margin-right: 1rem;
+        margin-bottom: 1rem;
         font-size: 0.8rem;
       }
 
@@ -484,14 +485,18 @@ section.works {
     }
 
     .project:nth-child(5) .project-img {
-      background-image: url(../img/hex-restaurant.png);
+      background-image: url(../img/portfolio.jpg);
     }
 
     .project:nth-child(6) .project-img {
-      background-image: url(../img/sweetaste.png);
+      background-image: url(../img/hex-restaurant.png);
     }
 
     .project:nth-child(7) .project-img {
+      background-image: url(../img/sweetaste.png);
+    }
+
+    .project:nth-child(8) .project-img {
       background-image: url(../img/bmi-calculator.png);
     }
   }
