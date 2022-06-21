@@ -298,6 +298,10 @@ section.experience {
       margin-bottom: 1rem;
     }
 
+    & .company {
+      font-weight: 700;
+    }
+
     & .description {
       font-size: 0.8rem;
     }
@@ -482,6 +486,10 @@ section.works {
 
     .project:nth-child(4) .project-img {
       background-image: url(../img/q-tube.jpg);
+    }
+
+    .project:nth-child(5) .project-img {
+      background-image: url(../img/portfolio.jpg);
     }
   }
 }
