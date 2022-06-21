@@ -542,6 +542,9 @@ section.experience .timeline .job {
   font-weight: 900;
   margin-bottom: 1rem;
 }
+section.experience .timeline .company {
+  font-weight: 700;
+}
 section.experience .timeline .description {
   font-size: 0.8rem;
 }
@@ -698,6 +701,9 @@ section.works .projects .project:nth-child(3) .project-img {
 }
 section.works .projects .project:nth-child(4) .project-img {
   background-image: url(../img/q-tube.jpg);
+}
+section.works .projects .project:nth-child(5) .project-img {
+  background-image: url(../img/portfolio.jpg);
 }
 
 .footer {
