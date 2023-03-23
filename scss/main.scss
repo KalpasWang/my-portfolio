@@ -41,6 +41,19 @@ a {
   &:hover {
     color: $secondary-color;
   }
+
+  svg {
+    fill: $text-color;
+  }
+
+  &:hover svg {
+    fill: $secondary-color;
+  }
+}
+
+svg,
+i.fab {
+  @include easeOut;
 }
 
 .hide {

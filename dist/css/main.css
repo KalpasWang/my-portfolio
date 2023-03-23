@@ -311,6 +311,17 @@ a {
 a:hover {
   color: #eece1a;
 }
+a svg {
+  fill: #f1f1f1;
+}
+a:hover svg {
+  fill: #eece1a;
+}
+
+svg,
+i.fab {
+  transition: all 0.5s ease-out;
+}
 
 .hide {
   opacity: 0 !important;
@@ -376,14 +387,7 @@ main.home .content {
   top: 50%;
   transform: translateY(-30%);
   opacity: 0;
-  -webkit-animation: slideUp 1s 0.5s forwards;
-          animation: slideUp 1s 0.5s forwards;
-}
-@-webkit-keyframes slideUp {
-  100% {
-    opacity: 1;
-    transform: translateY(-50%);
-  }
+  animation: slideUp 1s 0.5s forwards;
 }
 @keyframes slideUp {
   100% {
@@ -762,27 +766,22 @@ section.works .projects .project:nth-child(5) .project-img {
 }
 @media screen and (max-width: 767px) {
   main,
-section {
+  section {
     text-align: center;
   }
-
   main.home .icons {
     justify-content: center;
   }
-
   h1.lg-heading {
     font-size: 3rem;
   }
-
   .secondary-heading {
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
-
   .menu-nav {
     font-size: 24px;
   }
-
   section.experience .timeline {
     width: 100%;
     padding: 0 1rem;
@@ -790,19 +789,16 @@ section {
 }
 @media screen and (max-width: 575px) {
   h1.lg-heading,
-h2.lg-heading {
+  h2.lg-heading {
     margin-top: 1.5rem;
     font-size: 2.4rem;
   }
-
   .secondary-heading {
     font-size: 2rem;
   }
-
   h2.sm-heading {
     font-size: 1.2rem;
   }
-
   section.experience .timeline::before {
     left: calc(5% + 1rem);
   }
@@ -824,11 +820,9 @@ h2.lg-heading {
     right: unset;
     left: 0.5rem;
   }
-
   section.skills .skills-list {
     margin-top: 1.5rem;
   }
-
   .footer .contact-list {
     display: block;
     margin: 0 auto;
