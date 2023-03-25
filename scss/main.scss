@@ -56,6 +56,11 @@ i.fab {
   @include easeOut;
 }
 
+.cakeresume {
+  display: inline-block;
+  margin-top: 2px;
+}
+
 .hide {
   opacity: 0 !important;
   transform: translateY(20px) !important;
@@ -109,6 +114,7 @@ main.home {
 
     a {
       padding: 0 0.4rem;
+      text-align: center;
     }
   }
 
@@ -531,7 +537,7 @@ section.works {
 
   .contact {
     &-list {
-      max-width: 450px;
+      max-width: 650px;
       margin: 0 auto;
       margin-bottom: 1rem;
       display: flex;

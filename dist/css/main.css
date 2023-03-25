@@ -323,6 +323,11 @@ i.fab {
   transition: all 0.5s ease-out;
 }
 
+.cakeresume {
+  display: inline-block;
+  margin-top: 2px;
+}
+
 .hide {
   opacity: 0 !important;
   transform: translateY(20px) !important;
@@ -374,6 +379,7 @@ main.home .icons {
 }
 main.home .icons a {
   padding: 0 0.4rem;
+  text-align: center;
 }
 main.home .container {
   position: relative;
@@ -730,7 +736,7 @@ section.works .projects .project:nth-child(5) .project-img {
   text-decoration: underline;
 }
 .footer .contact-list {
-  max-width: 450px;
+  max-width: 650px;
   margin: 0 auto;
   margin-bottom: 1rem;
   display: flex;
