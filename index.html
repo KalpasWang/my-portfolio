@@ -60,6 +60,9 @@
           <li id="menu-works" class="menu-item">
             <a href="#works" class="menu-nav-link">Works</a>
           </li>
+          <li id="menu-contact" class="menu-item">
+            <a href="#contact" class="menu-nav-link">Contact Me</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -235,7 +238,7 @@
               </div>
             </li>
           </ul>
-          <div style="clear: both"></div>
+          <div class="clear-both"></div>
         </div>
       </div>
     </section>
@@ -716,7 +719,7 @@
       </div>
     </section>
 
-    <section id="contact-me" class="contact-me" data-menu="menu-contact-me">
+    <section id="contact" class="contact" data-menu="menu-contact">
       <div class="container">
         <h2 class="lg-heading">
           Contact
@@ -729,36 +732,80 @@
               歡迎使用此表單寄信給我，也歡迎用臉書，CakeResume 或 LinkedIn
               直接傳訊息給我
             </p>
-
             <div class="info">
               <!-- <div class="information">
                 <i class="fad fa-location"></i>
                 <p></p>
               </div> -->
               <div class="information">
-                <i class="far fa-envelope"></i>
-                <p>wf6212@gmail.com</p>
+                <i class="far fa-envelope fa-lg"></i>
+                <a
+                  href="mailto:wf6212@gmail.com"
+                  target="_blank"
+                  class="information-text"
+                  >wf6212@gmail.com</a
+                >
               </div>
               <div class="information">
-                <i class="far fa-phone"></i>
-                <p>0963-362404</p>
+                <i class="fas fa-phone fa-lg"></i>
+                <a
+                  href="tel:+886-963362404"
+                  target="_blank"
+                  class="information-text"
+                  >0963-362404</a
+                >
               </div>
             </div>
-
             <div class="social-media">
-              <p>Connect with us :</p>
+              <p>其他聯絡方式：</p>
               <div class="social-icons">
-                <a href="https://facebook.com/rubberwang97063" title="Facebook">
+                <a
+                  href="https://facebook.com/rubberwang97063"
+                  title="Facebook"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <i class="fab fa-facebook-square"></i>
                 </a>
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
+                <a
+                  href="https://github.com/KalpasWang"
+                  title="GitHub"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fab fa-github"></i>
                 </a>
-                <a href="#">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#">
+                <a
+                  href="https://www.linkedin.com/in/wei-hang-wang"
+                  title="LinkedIn"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://www.cakeresume.com/me/wf6212"
+                  title="CakeResume"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg
+                    version="1.0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16.8"
+                    viewBox="0 0 48 48"
+                    class="cakeresume dark"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <g
+                      transform="translate(0, 48) scale(0.1, -0.1)"
+                      stroke="none"
+                    >
+                      <path
+                        d="M22 457 c-21 -22 -22 -32 -22 -218 0 -258 -20 -239 241 -239 258 0 239 -20 239 241 0 258 20 239 -241 239 -191 0 -196 0 -217 -23z m294 -66 c54 -24 58 -33 30 -60 -21 -20 -25 -20 -57 -7 -69 29 -134 -12 -134 -84 0 -72 65 -113 134 -84 33 14 36 13 59 -10 l25 -24 -34 -21 c-76 -47 -154 -36 -212 28 -62 68 -62 154 0 222 53 59 117 72 189 40z"
+                      />
+                    </g>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -767,28 +814,27 @@
           <div class="contact-form">
             <span class="circle one"></span>
             <span class="circle two"></span>
-
-            <form action="index.html" autocomplete="off">
+            <form
+              target="_blank"
+              action="https://formsubmit.co/14d4ad0120ab4987f4843dac3f87cfdd"
+              method="post"
+            >
               <h3 class="title">Contact me</h3>
               <div class="input-container">
-                <input type="text" name="name" id="name" class="input" />
+                <input type="text" name="name" id="name" required />
                 <label for="name">Username</label>
-                <span>Username</span>
               </div>
               <div class="input-container">
-                <input type="email" name="email" id="email" class="input" />
+                <input type="email" name="email" id="email" required />
                 <label for="email">Email</label>
-                <span>Email</span>
               </div>
               <div class="input-container">
-                <input type="tel" name="phone" id="phone" class="input" />
+                <input type="tel" name="phone" id="phone" required />
                 <label for="phone">Phone</label>
-                <span>Phone</span>
               </div>
-              <div class="input-container textarea">
-                <textarea name="message" id="message" class="input"></textarea>
+              <div class="input-container">
+                <textarea name="message" id="message" required></textarea>
                 <label for="message">Message</label>
-                <span>Message</span>
               </div>
               <input type="submit" value="送出" class="btn" />
             </form>
@@ -803,82 +849,7 @@
           <img src="img/Logo.png" alt="logo" /> Kalpas Wang
         </a>
       </h2>
-      <ul class="contact-list">
-        <li class="contact-item">
-          <a
-            title="Facebook"
-            rel="noopener"
-            href="https://facebook.com/rubberwang97063"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fab fa-facebook-square fa-2x"></i>
-          </a>
-          <div class="contact-info">
-            <div class="contact-head">Facebook</div>
-            <div class="contact-sub-title">rubberwang97063</div>
-          </div>
-        </li>
-        <li class="contact-item">
-          <a
-            title="GitHub"
-            rel="noopener"
-            href="https://github.com/KalpasWang"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-          <div class="contact-info">
-            <div class="contact-head">Github</div>
-            <div class="contact-sub-title">KalpasWang</div>
-          </div>
-        </li>
-        <li class="contact-item">
-          <a
-            title="LinkedIn"
-            rel="noopener"
-            href="https://www.linkedin.com/in/wei-hang-wang"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-          <div class="contact-info">
-            <div class="contact-head">Linkedin</div>
-            <div class="contact-sub-title">wei-hang-wang</div>
-          </div>
-        </li>
-        <li class="contact-item">
-          <a
-            title="CakeResume"
-            rel="noopener"
-            href="https://www.cakeresume.com/me/wf6212"
-            target="_blank"
-            class="contact-link"
-          >
-            <svg
-              version="1.0"
-              xmlns="http://www.w3.org/2000/svg"
-              height="30"
-              viewBox="0 0 48 48"
-              class="cakeresume"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <g transform="translate(0, 48) scale(0.1, -0.1)" stroke="none">
-                <path
-                  d="M22 457 c-21 -22 -22 -32 -22 -218 0 -258 -20 -239 241 -239 258 0 239 -20 239 241 0 258 20 239 -241 239 -191 0 -196 0 -217 -23z m294 -66 c54 -24 58 -33 30 -60 -21 -20 -25 -20 -57 -7 -69 29 -134 -12 -134 -84 0 -72 65 -113 134 -84 33 14 36 13 59 -10 l25 -24 -34 -21 c-76 -47 -154 -36 -212 28 -62 68 -62 154 0 222 53 59 117 72 189 40z"
-                />
-              </g>
-            </svg>
-          </a>
-          <div class="contact-info">
-            <div class="contact-head">CakeResume</div>
-            <div class="contact-sub-title">wf6212</div>
-          </div>
-        </li>
-      </ul>
-      <p>&#169; 2023 copyrights all right reserved</p>
+      <p>&#169; 2023 copyrights all rights reserved</p>
     </footer>
 
     <script
