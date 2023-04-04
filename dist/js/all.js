@@ -12,7 +12,7 @@ $(function () {
   gsap.registerPlugin(ScrollTrigger);
 
   /* scrollSpy 效果與 scrollTo 效果 */
-  $('#home, #about, #experience, #skills, #works').each((i, el) => {
+  $('#home, #about, #experience, #skills, #works, #contact').each((i, el) => {
     const menuItem = '#' + $(el).data('menu');
 
     // 選單連結點擊後的滑動效果
