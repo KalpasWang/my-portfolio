@@ -60,6 +60,9 @@
           <li id="menu-works" class="menu-item">
             <a href="#works" class="menu-nav-link">Works</a>
           </li>
+          <li id="menu-contact" class="menu-item">
+            <a href="#contact" class="menu-nav-link">Contact Me</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -114,12 +117,13 @@
                   <svg
                     version="1.0"
                     xmlns="http://www.w3.org/2000/svg"
-                    height="30"
+                    height="28"
                     viewBox="0 0 48 48"
+                    class="cakeresume"
                     preserveAspectRatio="xMidYMid meet"
                   >
                     <g
-                      transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)"
+                      transform="translate(0, 48) scale(0.1, -0.1)"
                       stroke="none"
                     >
                       <path
@@ -147,10 +151,11 @@
             <p id="bio2">
               2018
               年開始自學網頁開發，之後又在Udemy、六角學院、haHow、HiSKIO等線上課程平台自學，熟悉
-              JavaScript、CSS 與 Sass 開發，以及 Vue.js、jQuery 等前端框架。
+              HTML、CSS 與 JavaScript，以及 Vue.js、React 等前端框架。
             </p>
             <p id="bio3" class="text-secondary">
-              熟悉技能包含 Vue2、Vue3、GSAP、jQuery、p5.js、Bootstrap、Sass 等
+              熟悉技能包含
+              Vue2、Vue3、React、TypeScript、Tailwind、CSS、Bootstrap、Sass 等
             </p>
           </div>
         </div>
@@ -165,7 +170,7 @@
         <p>My Experience Timeline</p>
         <div class="timeline">
           <ul class="time-container">
-            <li class="time-item time-item1">
+            <!-- <li class="time-item time-item1">
               <svg
                 class="time-marker time-marker1"
                 width="24"
@@ -187,7 +192,7 @@
                   幫助朋友開發可供線上閱讀與下載電子書的網站
                 </p>
               </div>
-            </li>
+            </li> -->
             <li class="time-item time-item2">
               <svg
                 class="time-marker time-marker2"
@@ -209,9 +214,9 @@
                 <p class="description">標註大量圖資協助 AI 模型訓練</p>
               </div>
             </li>
-            <li class="time-item time-item3">
+            <li class="time-item time-item1">
               <svg
-                class="time-marker time-marker3"
+                class="time-marker time-marker1"
                 width="24"
                 height="24"
                 viewBox="0 0 60 60"
@@ -233,7 +238,7 @@
               </div>
             </li>
           </ul>
-          <div style="clear: both"></div>
+          <div class="clear-both"></div>
         </div>
       </div>
     </section>
@@ -249,18 +254,18 @@
             <i class="fas fa-3x fa-pager"></i>
             <h3 class="sm-heading">網頁切版</h3>
             <ul class="skills-sublist">
-              <li>HTML、CSS 一頁式網頁</li>
-              <li>運用 RWD、SASS、HTML模板(Pug、EJS) 製作多頁式網站</li>
-              <li>熟悉 Bootstrap 4、Bootstrap 5、Tailwind CSS 等 CSS 框架</li>
+              <li>熟悉運用 HTML5、CSS3 將 UI設計稿轉換為網頁佈局與樣式</li>
+              <li>熟悉 Sass、Bootstrap、Tailwind CSS 等 CSS 框架</li>
             </ul>
           </li>
           <li class="skills-item skills-item2">
             <i class="fas fa-3x fa-code"></i>
             <h3 class="sm-heading">前端網頁開發</h3>
             <ul class="skills-sublist">
-              <li>Vue.js, Vue Router, Vuex 串接 API 開發 SPA 網站</li>
-              <li>使用CSS, GSAP 或 jQquery 製作互動動畫網頁</li>
-              <li>使用 TypeScript、Jest 與 Vue Test Utils 管理與維護程式</li>
+              <li>使用 React, Vue.js, 串接 API 開發 SPA 網站</li>
+              <li>使用 Canvas, GSAP 或 jQquery 製作互動動畫網頁</li>
+              <li>用 TypeScript 的型別系統輔助開發除錯</li>
+              <li>用 Jest 撰寫單元測試驗證程式邏輯</li>
             </ul>
           </li>
           <li class="skills-item skills-item3">
@@ -268,7 +273,8 @@
             <h3 class="sm-heading">開發工具</h3>
             <ul class="skills-sublist">
               <li>使用 Git, Git Flow, GitHub 版本控制</li>
-              <li>使用 Gulp 開發自動化</li>
+              <li>用 GitHub Actions 或 GitLab CI/CD 建立簡單 CI/CD Pipeline</li>
+              <li>用 Vite, Gulp, Webpack 建置開發環境與打包</li>
               <li>部屬至 Firebase, Github Pages, Vercel</li>
             </ul>
           </li>
@@ -360,6 +366,78 @@
                     <figure class="project-skillIcon">
                       <img src="img/sass-icon.svg" alt="Sass" height="36" />
                       <figcaption class="project-skillCaption">Sass</figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- Scrum 新手村 -->
+          <li class="project">
+            <div class="project-box">
+              <div class="project-img"></div>
+              <div class="project-body">
+                <h3 class="project-title">Scrum 新手村</h3>
+                <p class="project-details">
+                  參加2022年 F2E 第三關的作品，透過遊戲介紹 Scrum
+                  工作法的知識點，包含托放，排序等功能
+                </p>
+              </div>
+              <ul class="project-linksList">
+                <li class="project-linkItem">
+                  <a
+                    title="網站連結"
+                    rel="noopener"
+                    class="project-link"
+                    href="https://f2e-scrum-training.vercel.app/"
+                    target="_blank"
+                  >
+                    <i class="fas fa-globe fa-lg"></i>
+                    Website
+                  </a>
+                </li>
+                <li class="project-linkItem">
+                  <a
+                    title="程式碼連結"
+                    rel="noopener"
+                    class="project-link"
+                    href="https://github.com/KalpasWang/f2e-scrum-training"
+                    target="_blank"
+                  >
+                    <i class="fab fa-github fa-lg"></i>
+                    Code
+                  </a>
+                </li>
+              </ul>
+              <div class="project-footer">
+                <p>Tech Used</p>
+                <ul class="project-skillsList">
+                  <li class="project-skill">
+                    <figure class="project-skillIcon">
+                      <img src="img/react-icon.svg" alt="React" height="36" />
+                      <figcaption class="project-skillCaption">
+                        React
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="project-skill">
+                    <figure class="project-skillIcon">
+                      <img src="img/ts-icon.svg" alt="TypeScript" height="36" />
+                      <figcaption class="project-skillCaption">
+                        TypeScript
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="project-skill">
+                    <figure class="project-skillIcon">
+                      <img
+                        src="img/tailwind-icon.svg"
+                        alt="Tailwind CSS"
+                        height="36"
+                      />
+                      <figcaption class="project-skillCaption"
+                        >Tailwind CSS</figcaption
+                      >
                     </figure>
                   </li>
                 </ul>
@@ -641,60 +719,137 @@
       </div>
     </section>
 
+    <section id="contact" class="contact" data-menu="menu-contact">
+      <div class="container">
+        <h2 class="lg-heading">
+          Contact
+          <span class="text-secondary">Me</span>
+        </h2>
+        <div class="form">
+          <div class="contact-info">
+            <h3 class="title">與我聯繫</h3>
+            <p class="text">
+              歡迎使用此表單寄信給我，也歡迎用臉書，CakeResume 或 LinkedIn
+              直接傳訊息給我
+            </p>
+            <div class="info">
+              <!-- <div class="information">
+                <i class="fad fa-location"></i>
+                <p></p>
+              </div> -->
+              <div class="information">
+                <i class="far fa-envelope fa-lg"></i>
+                <a
+                  href="mailto:wf6212@gmail.com"
+                  target="_blank"
+                  class="information-text"
+                  >wf6212@gmail.com</a
+                >
+              </div>
+              <div class="information">
+                <i class="fas fa-phone fa-lg"></i>
+                <a
+                  href="tel:+886-963362404"
+                  target="_blank"
+                  class="information-text"
+                  >0963-362404</a
+                >
+              </div>
+            </div>
+            <div class="social-media">
+              <p>其他聯絡方式：</p>
+              <div class="social-icons">
+                <a
+                  href="https://facebook.com/rubberwang97063"
+                  title="Facebook"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fab fa-facebook-square"></i>
+                </a>
+                <a
+                  href="https://github.com/KalpasWang"
+                  title="GitHub"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/wei-hang-wang"
+                  title="LinkedIn"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://www.cakeresume.com/me/wf6212"
+                  title="CakeResume"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg
+                    version="1.0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16.8"
+                    viewBox="0 0 48 48"
+                    class="cakeresume dark"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <g
+                      transform="translate(0, 48) scale(0.1, -0.1)"
+                      stroke="none"
+                    >
+                      <path
+                        d="M22 457 c-21 -22 -22 -32 -22 -218 0 -258 -20 -239 241 -239 258 0 239 -20 239 241 0 258 20 239 -241 239 -191 0 -196 0 -217 -23z m294 -66 c54 -24 58 -33 30 -60 -21 -20 -25 -20 -57 -7 -69 29 -134 -12 -134 -84 0 -72 65 -113 134 -84 33 14 36 13 59 -10 l25 -24 -34 -21 c-76 -47 -154 -36 -212 28 -62 68 -62 154 0 222 53 59 117 72 189 40z"
+                      />
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <span class="circle one"></span>
+            <span class="circle two"></span>
+            <form
+              target="_blank"
+              action="https://formsubmit.co/14d4ad0120ab4987f4843dac3f87cfdd"
+              method="post"
+            >
+              <h3 class="title">Contact me</h3>
+              <div class="input-container">
+                <input type="text" name="name" id="name" required />
+                <label for="name">Username</label>
+              </div>
+              <div class="input-container">
+                <input type="email" name="email" id="email" required />
+                <label for="email">Email</label>
+              </div>
+              <div class="input-container">
+                <input type="tel" name="phone" id="phone" required />
+                <label for="phone">Phone</label>
+              </div>
+              <div class="input-container">
+                <textarea name="message" id="message" required></textarea>
+                <label for="message">Message</label>
+              </div>
+              <input type="submit" value="送出" class="btn" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer id="footer" class="footer">
       <h2 class="footer-title sm-heading">
         <a href="#" class="footer-logo">
           <img src="img/Logo.png" alt="logo" /> Kalpas Wang
         </a>
       </h2>
-      <ul class="contact-list">
-        <li class="contact-item">
-          <a
-            title="Facebook"
-            rel="noopener"
-            href="https://facebook.com/rubberwang97063"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fab fa-facebook-square fa-2x"></i>
-          </a>
-          <div class="contact-info">
-            <div class="contact-head">Facebook</div>
-            <div class="contact-sub-title">rubberwang97063</div>
-          </div>
-        </li>
-        <li class="contact-item">
-          <a
-            title="GitHub"
-            rel="noopener"
-            href="https://github.com/KalpasWang"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-          <div class="contact-info">
-            <div class="contact-head">Github</div>
-            <div class="contact-sub-title">KalpasWang</div>
-          </div>
-        </li>
-        <li class="contact-item">
-          <a
-            title="LinkedIn"
-            rel="noopener"
-            href="https://www.linkedin.com/in/wei-hang-wang"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-          <div class="contact-info">
-            <div class="contact-head">Linkedin</div>
-            <div class="contact-sub-title">wei-hang-wang</div>
-          </div>
-        </li>
-      </ul>
-      <p>&#169; 2021 copyrights all right reserved</p>
+      <p>&#169; 2023 copyrights all rights reserved</p>
     </footer>
 
     <script
