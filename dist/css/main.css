@@ -792,7 +792,7 @@ section.contact .input-container textarea, section.contact .input-container inpu
   width: 100%;
   outline: none;
   border: 2px solid #444;
-  background: none;
+  background: none !important;
   color: #111;
   font-size: 1rem;
   letter-spacing: 0.5px;
@@ -816,16 +816,16 @@ section.contact .input-container label {
   padding: 0 0.4rem;
   color: #111;
   font-size: 1rem;
+  border-radius: 8px;
   pointer-events: none;
   transition: all 0.25s ease-out;
 }
 section.contact .input-container textarea ~ label {
   top: 1.2rem;
 }
+section.contact .input-container label.labelup,
 section.contact .input-container input:focus ~ label,
-section.contact .input-container input:valid ~ label,
-section.contact .input-container textarea:focus ~ label,
-section.contact .input-container textarea:valid ~ label {
+section.contact .input-container textarea:focus ~ label {
   top: 0;
   font-size: 0.8rem;
   background: #eece1a;

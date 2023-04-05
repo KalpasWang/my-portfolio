@@ -119,6 +119,15 @@ $(function () {
   projects.forEach((project) => {
     observer2.observe(project);
   });
+
+  /* 表單 label 浮動特效 */
+  $('#contact input, #contact textarea').on('input', function () {
+    if ($(this).val().length > 0) {
+      $(this).siblings('label').addClass('labelup');
+    } else {
+      $(this).siblings('label').removeClass('labelup');
+    }
+  });
 });
 
 function setAnimation(timeline, target) {
